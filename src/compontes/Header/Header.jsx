@@ -1,10 +1,12 @@
  
+
 const Header = () => {
-    return (
-			<h1 className="text-3xl font-bold underline text-red-500">
-				Hello world!
-			</h1>
-		);
+	return (
+		<div>
+			<h1 className="text-4xl font-bold">Knowledge Cafe</h1>
+			<img src={profile} alt="" />
+		</div>
+	);
 };
 
 export default Header;
