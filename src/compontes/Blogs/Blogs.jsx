@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 
@@ -21,5 +22,7 @@ const Blogs = ({ handelAddToBookmarks }) => {
 		</div>
 	);
 };
-
+Blogs.propTypes = {
+	handelAddToBookmarks: PropTypes.func,
+};
 export default Blogs;
