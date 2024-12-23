@@ -5,8 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      // container :"max-w-[1220px] "
+    extend: { 
     },
   },
   plugins: [],
