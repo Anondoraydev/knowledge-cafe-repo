@@ -5,17 +5,27 @@ import Header from "./compontes/Header/Header";
 
 function App() {
 	const [bookMarkes, setbookMarkes] = useState([]);
+	const [readingTime, setReadingTime] = useState(0);
 	const handelAddToBookmarks = (blog) => {
 		const newbookmarks = [...bookMarkes, blog];
-		setbookMarkes(newbookmarks)
+		setbookMarkes(newbookmarks);
 	};
+	const handelAddToRedingmark = (time) => {
+		const newReadingTime = readingTime + time;
+		setReadingTime(newReadingTime);
+	};
+	
 	return (
 		<>
 			<div className="max-w-7xl m-auto">
 				<Header></Header>
 				<div className="md:flex">
-					<Blogs handelAddToBookmarks={handelAddToBookmarks}></Blogs>
-					<Bookmarkes bookMarkes={bookMarkes}></Bookmarkes>
+					<Blogs
+						handelAddToBookmarks={handelAddToBookmarks}
+						handelAddToRedingmark={handelAddToRedingmark}></Blogs>
+					<Bookmarkes
+						bookMarkes={bookMarkes}
+						readingTime={readingTime}></Bookmarkes>
 				</div>
 			</div>
 		</>

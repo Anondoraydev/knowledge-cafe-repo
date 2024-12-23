@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { FaBookmark } from "react-icons/fa6";
-const Blog = ({ blog, handelAddToBookmarks }) => {
+const Blog = ({ blog, handelAddToBookmarks, handelAddToRedingmark }) => {
 	const {
 		title,
 		cover,
@@ -12,7 +12,7 @@ const Blog = ({ blog, handelAddToBookmarks }) => {
 	} = blog;
 
 	return (
-		<div className="pb-20 ">
+		<div className="pb-20 space-y-3">
 			<img className="w-full pb-5" src={cover} alt={`Cover pic ${title}`} />
 			<div className="flex justify-between items-center">
 				<div className="flex">
@@ -39,11 +39,17 @@ const Blog = ({ blog, handelAddToBookmarks }) => {
 					</span>
 				))}
 			</p>
+			<button
+				onClick={() => handelAddToRedingmark(reading_time)}
+				className="text-purple-600 text-base underline">
+				Mark as read
+			</button>
 		</div>
 	);
 };
 Blog.propTypes = {
 	blog: PropTypes.object.isRequired,
-	handelAddToBookmarks: PropTypes.func
+	handelAddToBookmarks: PropTypes.func,
+	handelAddToRedingmark: PropTypes.func,
 };
 export default Blog;
