@@ -10,11 +10,15 @@ function App() {
 		const newbookmarks = [...bookMarkes, blog];
 		setbookMarkes(newbookmarks);
 	};
-	const handelAddToRedingmark = (time) => {
+	const handelAddToRedingmark = (id, time) => {
 		const newReadingTime = readingTime + time;
 		setReadingTime(newReadingTime);
+		// remove item
+
+		const remaingBookmark = bookMarkes.filter((bookMark) => bookMark.id !== id);
+		setbookMarkes(remaingBookmark);
 	};
-	
+
 	return (
 		<>
 			<div className="max-w-7xl m-auto">

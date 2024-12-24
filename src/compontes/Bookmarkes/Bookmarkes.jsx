@@ -11,8 +11,8 @@ const Bookmarkes = ({ bookMarkes, readingTime }) => {
 					{" "}
 					Book Markes: {bookMarkes.length}
 				</h2>
-				{bookMarkes.map((bookmark) => (
-					<BookMark key={bookmark.id} bookmark={bookmark}></BookMark>
+				{bookMarkes.map((bookmark, idx) => (
+					<BookMark key={idx} bookmark={bookmark}></BookMark>
 				))}
 			</div>
 		</div>
